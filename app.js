@@ -53,17 +53,17 @@ document.body.appendChild(h1)
 // Accessing elements in DOM
 
 /* 
-    DOM elements can be accessed several different ways. Most common include:
-        * getElementById()
-        * getElementsByClassName()
-        * getElementsByTagName()
-        * querySelector()
-        * querySelectorAll()
+DOM elements can be accessed several different ways. Most common include:
+* getElementById()
+* getElementsByClassName()
+* getElementsByTagName()
+* querySelector()
+* querySelectorAll()
 */
 
 // getElementById()
 /* 
-    Returns first instance of an element
+Returns first instance of an element
 */
 
 let listTitle = document.getElementById("listTitle")
@@ -71,11 +71,11 @@ listTitle.style.fontFamily = "Arial"
 
 // getElementsByClassName()
 /* 
-    Returns an HTML Collection of instance of a class
-    HTML Collection
-        * array-like object
-        * allows access to index, length, etc.
-        * we can loop through it
+Returns an HTML Collection of instance of a class
+HTML Collection
+* array-like object
+* allows access to index, length, etc.
+* we can loop through it
 */
 
 let listItems = document.getElementsByClassName("listItem")
@@ -103,5 +103,47 @@ li.className = "listItem"
 
 let ul = document.getElementById("ulToDo")
 ul.appendChild(li)
+
+
+// .getElementsByTagName
+
+/* 
+Works just like getElementsByClassName but for tags
+*/
+let listItemsByTagName = document.getElementsByTagName("li")
+
+console.log(listItemsByTagName)
+
+// .querySelector()
+/* 
+Returns the first instance of an element
+Can access using tag name, id, and class names
+*/
+
+let listItemsByQuerySelector = document.querySelector(".listItem")
+// the selector must specify the type ("nav" element; ".nav" class; "#nav" id)
+console.log(listItemsByQuerySelector)
+
+// .querySelectorAll()
+/* 
+    Returns a NodeList of all instances of a class, id, or element(s)
+    * Allows the use of array methods to iterate over
+    */
+
+let listItemsByQuerySelectorAll = document.querySelectorAll(".listItem")
+console.log(listItemsByQuerySelectorAll)
+
+listItemsByQuerySelectorAll.forEach(i => console.log(i))
+
+// Quick Challenge
+
+/* 
+    1. Create a listItem element that renders "Clean Bedroom"
+    2. Change it's color to red
+    3. Append to the bottom of our list
+    4. Change the color of "pack clothes" to magenta
+    5. Remove the last element (Googling)
+*/
+
 
 
