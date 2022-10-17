@@ -145,5 +145,58 @@ listItemsByQuerySelectorAll.forEach(i => console.log(i))
     5. Remove the last element (Googling)
 */
 
+// Step 1. Create your element
+let liChallenge = document.createElement("li")
+// Step 2. Assign property of the element object to appropriate value
+liChallenge.textContent = "Clean bedroom"
+liChallenge.style.color = "red"
+// Step 3 Append li element to ul parent element
+ul.appendChild(liChallenge)
+
+listItemsByTagName[1].style.color = "magenta"
+// ul.removeChild(li)
+
+// Event Listeners
+
+/* 
+    Allows us to execute a function when a particular event occurs.
+    * .addEventListener() takes an event and fires a callback fx when it occurs
+    * event - a string of what happens
+    * callback - action that fires when the event occurs
+*/
+
+let button = document.getElementById("submit")
+button.addEventListener("click", event => {
+    // Assign to input var whatever is coming from input field when Add Item is clicked
+    let input = document.getElementById("listInput").value
+    // Create our listItem element
+    let li = document.createElement("li")
+    // Assign it a listItem class attribute
+    li.className = "listItem"
+    // Assign the value stored in input variable into as its rendered text
+    li.textContent = input
+    // Find the parent element to which you want to append your new element
+    let ul = document.getElementById("ulToDo")
+    // Append new child element to the parent element
+    ul.appendChild(li)
+})
+
+// Challenge
+// Create a new static button that says Remove Item
+// When clicked, remove item will remove the last element from our ul
+// 10 mins
+
+let rmvBtn = document.querySelector("#remove")
+
+rmvBtn.addEventListener("click", e => {
+    e.target.style.color = "red"
+    let length = document.getElementsByClassName("listItem").length - 1
+    let li = document.getElementsByClassName("listItem")[length]
+    console.log(li)
+    let ul = document.getElementById("ulToDo")
+    ul.removeChild(li)
+})
+
+
 
 

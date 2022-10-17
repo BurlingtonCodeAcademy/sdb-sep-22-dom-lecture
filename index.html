@@ -22,6 +22,14 @@
     <div id="inputField">
         <input type="text" id="listInput" placeholder="ToDo Item">
         <button id="submit">Add Item</button>
+        <button id="remove">Remove Item</button>
+    </div>
+
+    <!-- Event Bubbling and Capture -->
+    <div onclick="alert('outer div')">Outer div
+        <div onclick="alert('inner div')">Inner div
+            <p onclick="alert('paragraph'); event.stopPropagation()">Paragraph</p>
+        </div>
     </div>
     <!-- HTML gets rendered top to bottom -->
     <!-- Script should ALWAYS be the last element in the body -->
